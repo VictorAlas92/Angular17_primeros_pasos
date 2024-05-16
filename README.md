@@ -1,4 +1,4 @@
-# VicAlas_FrontDev_proyect 💚
+# VictorAlas_Angular17_primeros_pasos 💚
 Primeras practicas para el [curso de ANGULAR 17](https://www.youtube.com/watch?v=f7unUpshmpA) de [midulive](https://www.youtube.com/@midulive)
 > - VictorAlas92
 
