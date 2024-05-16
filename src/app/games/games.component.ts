@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
-  selector: 'app-games',
+  selector: "app-games",
   standalone: true,
   imports: [],
   template: `
@@ -10,26 +10,32 @@ import { Component, Input } from '@angular/core';
       @for (game of games; track game.id) {
       <!-- //? duda con el id del for como
       //?funciona aun cuando yo pongo un id mas grande sigue haceindolo en orden */ -->
-      <li>{{ game.name }}</li>
+      <li (click)="fav(game.name)">{{ game.name }}</li>
       }
     </ul>
   `,
   styles: ``,
 })
 export class GamesComponent {
-  @Input() username = '';
+  @Input() username = "";
+  @Output() addFavoriteEvent = new EventEmitter<string>();
+
+  fav(gameName: string) {
+    this.addFavoriteEvent.emit(gameName);
+  }
+
   games = [
     {
       id: 1,
-      name: 'horizon',
+      name: "Metroid",
     },
     {
       id: 1,
-      name: 'megaman',
+      name: "Megaman",
     },
     {
       id: 3,
-      name: 'fornite',
+      name: "Fornite",
     },
   ];
 }

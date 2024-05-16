@@ -11,5 +11,12 @@
   <button (click)="isLoggedIn = true">Log In</button>
   }
 
-  <app-games>username='{{ username }}'</app-games>
+  <app-games
+    username="{{ username }}"
+    (addFavoriteEvent)="getFavorite($event)"
+  ></app-games>
+
+  @if (favGame != '') {
+  <p>tu juego favorito es {{ favGame }}</p>
+  }
 </section>
